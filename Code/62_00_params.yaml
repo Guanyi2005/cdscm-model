@@ -1,0 +1,67 @@
+# ===== paths & files =====
+paths:
+  input_from_61:            "outputs/61_data/hourly_ABCD_exp.csv"
+  v62_inputs:               "outputs/62_run/62_inputs.csv"
+  v62_compare:              "outputs/62_run/62_compare.csv"
+  v62_observed:             "outputs/62_run/62_observed.csv"
+  v62_expected:             "outputs/62_run/62_expected.csv"
+  v62_compare_with_do:      "outputs/62_run/62_compare_with_do.csv"
+  analysis_dir:             "outputs/62_run/analysis"
+
+# ===== columns  =====
+columns:
+  stay_id:        "stay_id"
+  t:              "t"
+  A_value:        "A_value"
+  A_prev:         "A_prev"
+  B1_value:       "B1_value"
+  B2_value:       "B2_value"
+  B_sum_value:    "B_sum_value"
+  C_value:        "C_value"
+  D_value:        "D_value"
+  E_on:           "E_on"
+  E_prev:         "E_prev"
+  A_low_flag:     "A_low"
+  B_on_flag:      "B_on"
+  C_low_flag:     "C_low"
+  D_high_flag:    "D_high"
+
+# ===== thresholds =====
+thresholds:
+  A_low:   65.0      # MAP mmHg
+  C_low:    0.50     # urine ml/kg/h
+  D_high:   1.50     # creatinine mg/dL
+
+# ===== structural effects  =====
+effects:
+  A:
+    baseline: 0.00
+  B:
+    baseline: 0.05
+    kappa_A:  0.70
+  C:
+    baseline: 0.50
+    kappa_B:  0.70
+    kappa_A:  0.10
+  D:
+    baseline: 0.50
+    kappa_C:  0.70
+    kappa_B:  0.10
+    kappa_A:  0.05
+  E:
+    baseline: 0.50
+    kappa_D:  0.70
+    kappa_C:  0.10
+    kappa_B:  0.05
+    kappa_A:  0.05
+
+# ===== optional exogenous noise (default off) =====
+noise:
+  B: { sigma: 0.00 }
+  C: { sigma: 0.00 }
+  D: { sigma: 0.00 }
+  E: { sigma: 0.00 }
+
+# ===== run config =====
+runconf:
+  seed: 1

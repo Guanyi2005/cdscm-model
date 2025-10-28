@@ -1,0 +1,14 @@
+
+effects:
+  B:
+    kappa_A: 0.69
+  C:
+    kappa_B: 0.45
+  D:
+    kappa_C: 0.61
+  E:
+    kappa_A: 0.11
+    kappa_B: 0.08
+    kappa_C: 0.21
+    kappa_D: 0.16
+

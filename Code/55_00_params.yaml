@@ -1,0 +1,54 @@
+# 5500_params.yaml
+# parameters for Chapter 5 synthetic experiments (55_01 – 55_04)
+
+# time window
+lag_pre: -12
+lag_post: 24
+prog_step: 10
+
+# flags
+id_col: stay_id
+t_col: t
+A_flag: A_low
+B_flag: B_on
+C_flag: C_low
+D_flag: D_high
+E_flag: E_on
+
+# hats (observed vs counterfactual)
+B_hat: B_hat
+C_hat: C_hat
+D_hat: D_hat
+E_hat: E_hat
+B_hat_cf: B_hat_doA0
+C_hat_cf: C_hat_doA0
+D_hat_cf: D_hat_doA0
+E_hat_cf: E_hat_doA0
+
+# 55_00_params.yaml  —— Chapter 5 synthetic runs (55_01/55_02 使用)
+effects:
+  A:
+    baseline: 0.0
+    phi: 0.0
+  B:
+    baseline: 0.5
+    phi: 0.0
+    kappa_A: 0.70
+  C:
+    baseline: 0.5
+    phi: 0.0
+    kappa_B: 0.70
+    kappa_A: 0.00
+  D:
+    baseline: 0.5
+    phi: 0.0
+    kappa_C: 0.70
+    kappa_B: 0.00
+    kappa_A: 0.00
+  E:
+    baseline: 0.5
+    phi: 0.0
+    kappa_D: 0.70
+    kappa_C: 0.70
+    kappa_B: 0.70
+    kappa_A: 0.70
